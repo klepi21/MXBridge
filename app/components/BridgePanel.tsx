@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Flame, Zap, Terminal } from "lucide-react";
 import { useState, useEffect } from "react";
+import FileTree from "./FileTree";
 
 interface BridgePanelProps {
     solidityCode: string;
@@ -85,6 +86,7 @@ export default function BridgePanel({ solidityCode, rustCode, onSolidityChange, 
                         <Terminal size={14} /> Output: {isTranslating ? "Processing..." : "Ready"}
                     </div>
                 </div>
+                {rustCode && <FileTree />}
             </motion.div>
         </div>
     );

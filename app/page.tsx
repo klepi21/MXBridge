@@ -4,6 +4,7 @@ import { useState } from "react";
 import BridgePanel from "./components/BridgePanel";
 import HodlothSidebar from "./components/HodlothSidebar";
 import { generateMxProject } from "./utils/scaffold";
+import { SAMPLES } from "./utils/samples";
 
 export default function Home() {
   const [solidityCode, setSolidityCode] = useState("");
@@ -85,6 +86,38 @@ export default function Home() {
               {isTranslating ? "TRANSMUTING..." : "TRANSMUTE"}
             </button>
           </div>
+        </div>
+
+        {/* Sample Gallery */}
+        <div style={{ padding: "10px 40px", display: "flex", gap: "10px", alignItems: "center", background: "rgba(255,255,255,0.02)" }}>
+          <span style={{ fontSize: "0.7rem", fontWeight: "700", opacity: 0.5, textTransform: "uppercase", letterSpacing: "0.1em" }}>Load Sample:</span>
+          {SAMPLES.map((sample) => (
+            <button
+              key={sample.name}
+              onClick={() => {
+                setSolidityCode(sample.solidity);
+                setRustCode("");
+                setExplanations(["Sample loaded... Click TRANSMUTE to begin."]);
+              }}
+              style={{
+                background: "rgba(255,255,255,0.05)",
+                border: "1px solid var(--glass-border)",
+                padding: "6px 12px",
+                borderRadius: "20px",
+                color: "#fff",
+                fontSize: "0.75rem",
+                cursor: "pointer",
+                display: "flex",
+                alignItems: "center",
+                gap: "6px",
+                transition: "all 0.2s"
+              }}
+              onMouseOver={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.1)")}
+              onMouseOut={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.05)")}
+            >
+              <sample.icon size={14} /> {sample.name}
+            </button>
+          ))}
         </div>
 
         <BridgePanel
