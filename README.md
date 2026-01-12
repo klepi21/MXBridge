@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌉 MX Dev Bridge (HODLOTH Engine)
 
-## Getting Started
+> **From Solidity Chaos to MultiversX Zen.**  
+> Effortlessly transmute your EVM smart contracts into high-performance MultiversX Rust modules.
 
-First, run the development server:
+![MXBridge Banner](public/zensloth_new.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**MX Dev Bridge** is a next-generation developer tool designed to lower the barrier of entry for the MultiversX ecosystem. Powered by the **HODLOTH L3 Engine** (a specialized AI agent running on Groq/Llama-3), it analyzes Solidity code and "transmutes" it into production-ready MultiversX Rust smart contracts.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Unline simple transpilers, HODLOTH understands the *intent* of your code, mapping EVM concepts (like `mapping`, `msg.sender`) to their proper MultiversX equivalents (`StorageMapper`, `blockchain().get_caller()`), all while wrapping you in a calm, zen-like developer experience.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ✨ Key Features
 
-## Learn More
+- **🔥 AI Transmutation**: Paste any Solidity contract (ERC20, NFT, Staking) and watch it convert to Rust in real-time.
+- **🧠 Intelligent Insights**: The engine explains *why* changes were made, teaching you MultiversX patterns as you go.
+- **⚡ Instant Scaffolding**: One-click download of a full `mxpy` compatible project structure (`wasm`, `meta`, `src`) ready to build.
+- **🛡️ Audit Pulse**: Automated safety checks for common pitfalls during migration (Re-entrancy, Gas limits, etc.).
+- **💎 Zen UI**: specialized "Glassmorphism" interface with `framer-motion` animations to keep you focused and relaxed.
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Framework**: [Next.js 16](https://nextjs.org/) (App Router & Turbopack)
+- **AI Engine**: [Groq SDK](https://groq.com/) (Llama-3-70b-versatile)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Styling**: CSS Modules + Global Variables (No Tailwind, just pure style)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Zip Generation**: JSZip
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ⚡ Getting Started
 
-## Deploy on Vercel
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/klepi21/MXBridge.git
+   cd MXBridge
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Install Dependencies**
+   ```bash
+   npm install
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. **Configure Environment**
+   Create a `.env.local` file and add your Groq API key:
+   ```bash
+   GROQ_API_KEY=your_groq_api_key_here
+   ```
+
+4. **Run the Bridge**
+   ```bash
+   npm run dev
+   ```
+   Open `http://localhost:3000` and start transmuting!
+
+## 🧘 The HODLOTH Philosophy
+
+> "Code runs fast, but the developer must be still."
+
+The **HODLOTH** (Hold + Sloth) is our AI mascot. While other tools rush you, the HODLOTH ensures your migration is accurate, secure, and stress-free. Trust the process.
+
+## 🤝 Contributing
+
+We welcome all builders! Please fork the repo and submit a PR.
+
+## 📄 License
+
+MIT © [Konstantinos Lepidas]
