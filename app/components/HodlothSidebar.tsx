@@ -27,7 +27,7 @@ export default function HodlothSidebar({ explanations, isTranslating, onDownload
                     transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 >
                     <Image
-                        src="/zensloth.png"
+                        src="/zensloth_new.png"
                         alt="HODLOTH AI"
                         width={120}
                         height={120}
