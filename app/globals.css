@@ -1,27 +1,11 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --background: #0a0a0c;
+  --foreground: #ffffff;
+  --panel-solidity: #1a1a1f;
+  --panel-rust: #0ea5e9;
+  --accent: #f97316;
+  --glass: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
 }
 
 * {
@@ -30,13 +14,81 @@ body {
   margin: 0;
 }
 
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--glass-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.glass-card {
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+}
+
+.fire-glow {
+  box-shadow: 0 0 40px rgba(249, 115, 22, 0.15);
+  border: 1px solid rgba(249, 115, 22, 0.2) !important;
+}
+
+.fire-glow:hover {
+  box-shadow: 0 0 60px rgba(249, 115, 22, 0.25);
+  border: 1px solid rgba(249, 115, 22, 0.4) !important;
+}
+
+.lightning-glow {
+  box-shadow: 0 0 40px rgba(14, 165, 233, 0.15);
+  border: 1px solid rgba(14, 165, 233, 0.2) !important;
+}
+
+.lightning-glow:hover {
+  box-shadow: 0 0 60px rgba(14, 165, 233, 0.25);
+  border: 1px solid rgba(14, 165, 233, 0.4) !important;
+}
+
+@keyframes streamIn {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
   }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.streaming-text {
+  animation: streamIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.code-font {
+  font-family: 'Fira Code', 'Courier New', monospace;
 }
